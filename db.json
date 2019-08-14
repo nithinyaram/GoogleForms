@@ -1,0 +1,48 @@
+{
+  "Feilds": [
+    {
+      "id": 1,
+      "name": "Pankaj",
+      "salary": "10000"
+    },
+    {
+      "name": "yashwanth",
+      "salary": 10000,
+      "id": 20
+    },
+    {
+      "name": "yashwanth",
+      "salary": 10000,
+      "id": 21
+    },
+    {
+      "name": "yashwanth",
+      "salary": 10000,
+      "id": 22
+    }
+  ],
+  "Application": [
+    {
+      "lable": "Name",
+      "minLength": "5",
+      "maxLenght": "10",
+      "isRequired": true,
+      "textType": 1,
+      "ty": "text",
+      "isMinLengthSatisfied": false,
+      "isMaxLengthSatisfied": false,
+      "id": 1
+    },
+    {
+      "lable": "Password",
+      "minLength": "2",
+      "maxLenght": "20",
+      "isRequired": false,
+      "textType": 2,
+      "ty": "password",
+      "isMinLengthSatisfied": false,
+      "isMaxLengthSatisfied": false,
+      "id": 2
+    }
+  ]
+}

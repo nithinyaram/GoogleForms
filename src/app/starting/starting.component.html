@@ -1,0 +1,35 @@
+
+<div class=" float-left btn-group btn-group-vertical">
+    <div >
+      <ul class="nav flex-column">
+      <li class='nav-item'><button class='btn btn-primary btn-block'  (click)="assignComponent('Text')">
+        Text-Box
+      </button></li>
+      <li class='nav-item'><button class='btn btn-primary btn-block'   (click)="assignComponent('Check')">
+        Check-Box
+      </button></li>
+      <li class='nav-item'> <button class='btn btn-primary btn-block' (click)="assignComponent('Radio')">
+        Radio-Button
+      </button></li>
+      <button class='btn btn-primary btn-block' (click)='Display()' >Review</button>
+    </ul>
+
+    </div>
+  </div>
+
+  <div>
+    <!-- <h1><ng-container *ngComponentOutlet="dummyComponent"></ng-container></h1> -->
+
+    <p *ngFor="let component of allComponents">
+      <ng-container *ngComponentOutlet="component"></ng-container>
+    </p>
+
+  </div>
+
+  <div *ngFor="let item of parseData">
+    <label>{{item.lable}}</label>
+    <input type={{item.ty}}/>
+  </div>
+
+
+

@@ -1,0 +1,63 @@
+<!-- <ul *ngFor="let json of jsons">
+  <li>
+    {{ json.lable }} :
+    <input
+      #box
+      type="{{ json.ty }}"
+      min="{{ json.minLength }}"
+      (blur)="ValidateField(box.value, json)"
+    />
+    <button class="delete" (click)="delete(json)">x</button>
+  </li>
+</ul>
+<button (click)="Validate()">Submit</button> -->
+
+<!--
+<div class="container">
+  <br />
+  <form (ngSubmit)='loginUser()' [formGroup]='loginForm' novalidate class="form">
+
+      <input formControlName='password' type="password" class="form-control" placeholder="Enter Password" />
+      <input formControlName='password1' type="password" class="form-control" placeholder="Enter Password" />
+
+      <button [disabled]='loginForm.invalid' class="btn btn-default">Login</button>
+  </form>
+</div> -->
+
+<div class="container">
+  <form class="form-horizontal">
+    <div *ngFor="let json of jsons">
+      <label class="control-label col-sm-2" for="email">
+        {{ json.lable }} :</label
+      >
+      <div class="col-sm-10 input-group">
+        <input
+          #box
+          type="{{ json.ty }}"
+          [minLength]="json.minLength"
+          [maxLength]="json.maxLenght"
+          [required]="json.isRequired"
+          class="form-control "
+          (blur)="ValidateField(box.value, json)"
+        />
+        <div class="input-group-btn" (click)="delete(json)">
+          <button class="btn btn-danger" type="submit">X</button>
+        </div>
+      </div>
+      <div *ngIf="json.isMinLengthSatisfied">
+        <p>It Should be of minLength {{ json.minLength }}</p>
+      </div>
+      <!-- <div>
+        <p>Required</p>
+      </div> -->
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success" (click)="submit()">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+

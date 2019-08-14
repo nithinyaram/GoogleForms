@@ -1,0 +1,30 @@
+<div></div>
+
+<div class="TextArea container">
+  lable Name : <input #labl type="text" /><br />
+
+  <div class="form-group  row">
+    Select Name
+    <div class="dropdown">
+      <select id="Id" #Id="ngModel" [(ngModel)]="nameId" name="Id">
+        <option selected="" value="Select"></option>
+        <option [ngValue]="k.Id" *ngFor="let k of nameList">
+          {{ k.Name }}
+        </option>
+      </select>
+    </div>
+  </div>
+  <br />
+
+  <!-- </div> -->
+
+  Minimum length :<input #minlen type="number" /><br /><br />
+  Maximum lenght :<input #maxlen type="number" /><br />
+  Required :
+  <input #require type="checkbox" (change)="isChecked($event)" /><br />
+  <button (click)="setConstraints(labl.value, minlen.value, maxlen.value)">
+    Submit
+  </button>
+
+  <div *ngIf="CanGo">{{ Obj.lable }} : <input [type]="Obj.ty" /></div>
+</div>
